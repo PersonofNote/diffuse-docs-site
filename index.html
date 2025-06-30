@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Diffuse – Catch Risky Changes Before QA</title>
+  <meta name="description" content="Diffuse analyzes your pull requests and highlights breaking changes that might slip past tests or reviewers. Get automated risk assessment for your code changes." />
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Diffuse – Catch Risky Changes Before QA">
+  <meta property="og:description" content="Automated risk assessment for your code changes. Detect breaking changes before they reach production.">
+  <meta property="og:url" content="https://diffuse.dev">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🔍%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">🔍</span>
+        <h1>Diffuse</h1>
+      </div>
+      <p class="tagline">Catch risky PRs before they reach production</p>
+      <p class="subtitle">Automated risk assessment for your code changes</p>
+      <div class="install-cta">
+        <code id="install-command">npm install @personofnote/diffuse</code>
+        <button class="copy-btn" onclick="copyInstallCommand()">Copy Command</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="problem">
+      <div class="container">
+        <h2>The Problem</h2>
+        <p style="font-size: 1.2rem; text-align: center; margin-bottom: 20px;">Breaking changes slip through code reviews and tests, causing production issues that could have been caught earlier.</p>
+        
+        <div class="problem-grid">
+          <div class="problem-item">
+            <span class="problem-icon">💥</span>
+            <h3>Silent Breaking Changes</h3>
+            <p>Removed props, narrowed types, and interface changes that break downstream code</p>
+          </div>
+          <div class="problem-item">
+            <span class="problem-icon">🤔</span>
+            <h3>Reasonable-Looking Code</h3>
+            <p>Code passes tests, looks reasonable, and works within ticket scope but breaks somewhere else</p>
+          </div>
+          <div class="problem-item">
+            <span class="problem-icon">⏰</span>
+            <h3>Late Discovery</h3>
+            <p>Issues found in QA or production when they're expensive to fix</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works">
+      <div class="container">
+        <h2>How Diffuse Works</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Install & Configure</h3>
+            <p>Add Diffuse to your project via npm or use it as a GitHub Action in your CI/CD pipeline</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Analyze Changes</h3>
+            <p>Diffuse analyzes your PR diffs and identifies potentially risky changes to your codebase</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Get Risk Score</h3>
+            <p>Receive a clear risk assessment with specific warnings about breaking changes</p>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3>Fix Before Merge</h3>
+            <p>Address issues early when they're easy and cheap to fix</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <h2>Key Features</h2>
+        <div class="features-grid">
+          <div class="feature">
+            <span class="feature-icon">🎯</span>
+            <h3>Smart Change Detection</h3>
+            <p>Automatically flags removed props, narrowed types, untested new exports, and other risky patterns that might break existing code.</p>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">📊</span>
+            <h3>Blast Radius Scoring</h3>
+            <p>Get an instant risk assessment score so you know how carefully to review and test a PR before merging.</p>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">⚙️</span>
+            <h3>CLI + GitHub Action</h3>
+            <p>Use locally during development or integrate seamlessly into your CI/CD pipeline for automatic checks.</p>
+          </div>
+        </div>
+        
+        <div class="docs-links">
+          <a href="https://www.npmjs.com/package/@personofnote/diffuse" class="doc-link" rel="noopener" target="_blank">📦 NPM Package</a>
+          <a href="https://github.com/PersonofNote/diffuse-open-cli" class="doc-link" rel="noopener" target="_blank">💻 GitHub Repo</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo">
+      <div class="container">
+        <h2>Sample Output</h2>
+        <div class="demo-placeholder">
+          <img src="./pr-screenshot.png" 
+     alt="Screenshot of Diffuse PR output showing risk analysis" 
+     loading="lazy" />
+     <img src="./terminal-screenshot.png" 
+     alt="Screenshot of Diffuse CLI output showing risk analysis" 
+     loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section class="roadmap">
+      <div class="container">
+        <h2>Coming Next</h2>
+        <ul class="roadmap-list">
+          <li><strong>Subtree spread analysis:</strong> Better detection of complex object mutations and spreads</li>
+          <li><strong>Full JavaScript support:</strong> Expand beyond TypeScript to vanilla JS projects</li>
+          <li><strong>Multi-language support:</strong> Python, Go, and other popular languages</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="pro-cta">
+      <div class="container">
+        <h2>Interested in Pro Features?</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 20px;">I'm testing whether to build a PRO version with advanced team features. Interested? Let me know!</p>
+        
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeV_JXVtKvaypfmRVckZGBpe-2Cny7hQyMLFYFWSEzIcCuzDA/viewform" class="interest-btn" rel="noopener" target="_blank">
+          📝 Show Interest in PRO
+        </a>
+        
+        <h3>Planned PRO Features</h3>
+        <div class="pro-features">
+          <div class="pro-feature">
+            <h4>🔗 Cross-repo Analysis</h4>
+            <p>GitHub App integration for analyzing changes across multiple repositories</p>
+          </div>
+          <div class="pro-feature">
+            <h4>🔥 Hot File Detection</h4>
+            <p>Identify frequently changed files that need extra attention</p>
+          </div>
+          <div class="pro-feature">
+            <h4>📈 Historical Analytics</h4>
+            <p>Track trends and get insights from your team's change patterns</p>
+          </div>
+          <div class="pro-feature">
+            <h4>📊 Advanced Dashboard</h4>
+            <p>Visual analytics and reporting for team leads and managers</p>
+          </div>
+          <div class="pro-feature">
+            <h4>💬 Slack Integration</h4>
+            <p>Get notifications and summaries directly in your team channels</p>
+          </div>
+          <div class="pro-feature">
+            <h4>⚙️ Project-Aware Config</h4>
+            <p>Custom risk rules for Next.js, Vite, and other specific frameworks</p>
+          </div>
+          <div class="pro-feature">
+            <h4>💡 Something else?</h4>
+            <p>Want a feature that's not on this list? Let me know!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Diffuse. Built by <a href="https://github.com/PersonofNote" rel="noopener" target="_blank">Jessica Martin</a>.</p>
+    </div>
+  </footer>
+
+  <script>
+    function copyInstallCommand() {
+      const command = document.getElementById('install-command').textContent;
+      navigator.clipboard.writeText(command).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        const originalText = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => {
+          btn.textContent = originalText;
+        }, 2000);
+      });
+    }
+
+    // Add smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
